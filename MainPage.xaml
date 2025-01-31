@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MetaRov.MainPage"
+             BackgroundColor="#1b1c1e">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <BoxView BackgroundColor="#a09e9f"
+             HeightRequest="1"
+             WidthRequest="40"
+             Grid.Row="0"
+             Grid.Column="0"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"
+             />
+
+        <Label BackgroundColor="Transparent"
+           Text="เริ่มค้นหาฮีโร่ที่เหมาะสมกับคุณกันเถอะ"
+           TextColor="#a09e9f"
+           FontFamily="InterVariable"
+           FontSize="14"
+           Grid.Row="0"
+           Grid.Column="1"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"/>
+
+        <BoxView BackgroundColor="#a09e9f"
+             HeightRequest="1"
+             WidthRequest="40"
+             Grid.Row="0"
+             Grid.Column="2"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"/>
+
+        <Frame  
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                CornerRadius="20"
+                HasShadow="False"
+                Padding="0"
+                Margin="0,40,0,0"
+                BackgroundColor="Transparent"
+                WidthRequest="350"
+                HeightRequest="180">
+
+            <ImageButton 
+                Source="mortos.jpg"
+                Aspect="AspectFill"
+                WidthRequest="355"
+                HeightRequest="180"
+                Clicked="ShowLaneSelectionPopup"/>
+        </Frame>
+
+        <Frame  
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                CornerRadius="20"
+                HasShadow="False"
+                Padding="0"
+                Margin="0,90,0,0"
+                BackgroundColor="Transparent"
+                WidthRequest="350"
+                HeightRequest="180">
+
+            <ImageButton 
+                x:Name="quizBT"
+                Clicked="quizBT_Clicked"
+                Source="butterfly.jpg"
+                Aspect="AspectFill"
+                WidthRequest="360"
+                HeightRequest="180"/>
+        </Frame>
+
+        <Frame  
+                Grid.Row="3"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                CornerRadius="20"
+                HasShadow="False"
+                Padding="0"
+                Margin="0,150,0,0"
+                BackgroundColor="Transparent"
+                WidthRequest="350"
+                HeightRequest="180">
+
+            <ImageButton 
+                x:Name="tierlistBT"
+                Clicked="tierlistBT_Clicked"
+                Source="doria.jpg"
+                Aspect="AspectFill"
+                WidthRequest="350"
+                HeightRequest="180"/>
+        </Frame>
+
+        <Label
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="0,90,0,2"
+                Text="You have been given an ultimatum. Outplay the Champion or be Outplayed ?"
+                FontSize="10"
+                TextColor="#9f9c9c"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+            />
+
+        <Label
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Margin="0,110,0,2"
+                Text="© Copyright 2025. MetaROV"
+                FontSize="10"
+                TextColor="White"
+                FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+            />
+
+    </Grid>
+
+
+
+</ContentPage>

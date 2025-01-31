@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MetaRov.Quiz"
+             BackgroundColor="#1b1c1e">
+
+    <VerticalStackLayout Padding="20" Spacing="20">
+
+        <!-- Progress Bar -->
+        <ProgressBar Progress="{Binding ProgressValue}" HeightRequest="5" BackgroundColor="#d8d9d8" ProgressColor="#cc9a5f"/>
+
+        <Frame WidthRequest="300" HeightRequest="150" CornerRadius="5"
+               IsClippedToBounds="True" Padding="0" BackgroundColor="Transparent"
+               HorizontalOptions="Center" VerticalOptions="Center" Margin="0,10,0,0">
+            <Image Source="quiz_image.png" WidthRequest="306" HeightRequest="150" Aspect="AspectFill"/>
+        </Frame>
+
+        <Label Text="คุณมีลักษณะนิสัยเหมือนใครใน ROV" FontFamily="InterVariable"
+               FontSize="16" TextColor="#cc9a5f" HorizontalOptions="Center"/>
+
+        <!-- คำถาม -->
+        <Label Text="{Binding CurrentQuestion}" FontSize="14" FontFamily="InterVariable"
+               TextColor="White" HorizontalOptions="Center"/>
+
+        <!-- ตัวเลือก A -->
+        <Border StrokeThickness="1" Padding="20" Margin="0,10,0,0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Border.Triggers>
+                <DataTrigger TargetType="Border" Binding="{Binding SelectedOption}" Value="A">
+                    <Setter Property="Stroke" Value="#cc9a5f"/>
+                </DataTrigger>
+            </Border.Triggers>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SelectOptionCommand}" CommandParameter="A"/>
+            </Border.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10">
+                <Image Source="tank.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="{Binding OptionA}" TextColor="White" FontSize="12" FontFamily="InterVariable" VerticalOptions="Center"/>
+            </StackLayout>
+        </Border>
+
+        <!-- ตัวเลือก B -->
+        <Border StrokeThickness="1" Padding="20" Margin="0,10,0,0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Border.Triggers>
+                <DataTrigger TargetType="Border" Binding="{Binding SelectedOption}" Value="B">
+                    <Setter Property="Stroke" Value="#cc9a5f"/>
+                </DataTrigger>
+            </Border.Triggers>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SelectOptionCommand}" CommandParameter="B"/>
+            </Border.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10">
+                <Image Source="mage.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="{Binding OptionB}" TextColor="White" FontSize="12" FontFamily="InterVariable" VerticalOptions="Center"/>
+            </StackLayout>
+        </Border>
+
+        <!-- ตัวเลือก C -->
+        <Border StrokeThickness="1" Padding="20" Margin="0,10,0,0">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10"/>
+            </Border.StrokeShape>
+            <Border.Triggers>
+                <DataTrigger TargetType="Border" Binding="{Binding SelectedOption}" Value="C">
+                    <Setter Property="Stroke" Value="#cc9a5f"/>
+                </DataTrigger>
+            </Border.Triggers>
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding SelectOptionCommand}" CommandParameter="C"/>
+            </Border.GestureRecognizers>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="10">
+                <Image Source="fighter.png" WidthRequest="50" HeightRequest="50"/>
+                <Label Text="{Binding OptionC}" TextColor="White" FontSize="12" FontFamily="InterVariable" VerticalOptions="Center"/>
+            </StackLayout>
+        </Border>
+
+        <!-- ปุ่มยืนยัน -->
+        <Button Margin="0,10,0,0" Text="{Binding NextButtonText}"
+                IsEnabled="{Binding IsNextEnabled}"
+                Command="{Binding NextQuestionCommand}"
+                BackgroundColor="#cc9a5f" TextColor="White"/>
+    </VerticalStackLayout>
+</ContentPage>

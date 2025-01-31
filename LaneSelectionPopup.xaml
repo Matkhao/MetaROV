@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="MetaRov.LaneSelectionPopup"
+               >
+
+    <VerticalStackLayout Padding="20" BackgroundColor="#1b1c1e" WidthRequest="350">
+        <Label Text="โปรดเลือกเลนที่ต้องการ"
+               FontSize="18"
+               FontFamily="InterVariable"
+               TextColor="White"
+               HorizontalOptions="Center" />
+        <Label Text="เลือกเลนที่ต้องการจากนั้นระบบจะแนะนำฮีโร่ตามตำแหน่งที่คุณถนัด"
+               FontSize="14"
+               FontFamily="InterVariable"
+               TextColor="Grey"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               Margin="20,5,0,15"/>
+
+        <HorizontalStackLayout>
+            <Frame  
+                CornerRadius="5"
+                HasShadow="False"
+                Padding="0"
+                Margin="0,0,0,0"
+                BackgroundColor="Transparent"
+                WidthRequest="100"
+                HeightRequest="100">
+
+                <ImageButton 
+                x:Name="fighterBT"
+                Clicked="fighterBT_Clicked"
+                Source="lane_fighter.png"
+                Aspect="AspectFill"
+                WidthRequest="100"
+                HeightRequest="100"/>
+            </Frame>
+            <Frame  
+                CornerRadius="5"
+                HasShadow="False"
+                Padding="0"
+                Margin="10,0,0,0"
+                BackgroundColor="Transparent"
+                WidthRequest="100"
+                HeightRequest="100">
+
+                <ImageButton
+                x:Name="mageBT"
+                Clicked="mageBT_Clicked"
+                Source="lane_mage.png"
+                Aspect="AspectFill"
+                WidthRequest="100"
+                HeightRequest="100"/>
+            </Frame>
+            <Frame  
+                CornerRadius="5"
+                HasShadow="False"
+                Padding="0"
+                Margin="10,0,0,0"
+                BackgroundColor="Transparent"
+                WidthRequest="100"
+                HeightRequest="100">
+
+                <ImageButton
+                x:Name="carryBT"
+                Clicked="carryBT_Clicked"
+                Source="lane_carry.png"
+                Aspect="AspectFill"
+                WidthRequest="100"
+                HeightRequest="100"/>
+            </Frame>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Padding="10" Margin="0,0,0,20">
+            <Frame  
+                CornerRadius="5"
+                HasShadow="False"
+                Padding="0"
+                Margin="50,0,0,0"
+                BackgroundColor="Transparent"
+                WidthRequest="100"
+                HeightRequest="100">
+
+                <ImageButton 
+                x:Name="jungleBT"
+                Clicked="jungleBT_Clicked"
+                Source="lane_jungle.png"
+                Aspect="AspectFill"
+                WidthRequest="100"
+                HeightRequest="100"/>
+            </Frame>
+            <Frame  
+                CornerRadius="5"
+                HasShadow="False"
+                Padding="0"
+                Margin="10,0,0,0"
+                BackgroundColor="Transparent"
+                WidthRequest="100"
+                HeightRequest="100">
+
+                <ImageButton 
+                x:Name="supportBT"
+                Clicked="supportBT_Clicked"
+                Source="lane_support.png"
+                Aspect="AspectFill"
+                WidthRequest="100"
+                HeightRequest="100"/>
+            </Frame>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+
+</toolkit:Popup>

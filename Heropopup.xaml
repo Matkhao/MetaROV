@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+               xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               x:Class="MetaRov.HeroPopup">
+
+    <VerticalStackLayout Padding="20" BackgroundColor="#3A3B5A" WidthRequest="350">
+        <Grid>
+            <Label 
+                   Margin="0,10,0,10"
+                   Text="ลักษณะนิสัยของคุณ"
+                   FontSize="14" 
+                   FontFamily="InterVariable"
+                   TextColor="White"
+                   HorizontalOptions="Center"/>
+            <Image Source="close_icon.png"
+                   WidthRequest="20"
+                   HeightRequest="20"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ClosePopup_Clicked"/>
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+
+        <Frame  CornerRadius="20" 
+                IsClippedToBounds="True" 
+                Padding="0"
+                BackgroundColor="Transparent"
+                BorderColor="White"
+                WidthRequest="100"
+                HeightRequest="100"
+                HorizontalOptions="Center"
+                Margin="0,5,0,0">
+            <Image x:Name="HeroImage"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    Aspect="AspectFill"/>
+        </Frame>
+
+        <Label x:Name="HeroDescription"
+               FontSize="12"
+               TextColor="#D1C4E9"
+               HorizontalTextAlignment="Center"
+               Margin="0,10,0,0"/>
+
+        <Button Text="กลับหน้าหลัก"
+                FontSize="14"
+                FontFamily="InterVariable"
+                BackgroundColor="#CC9A5F"
+                TextColor="White"
+                Clicked="ClosePopup_Clicked"
+                Padding="0"
+                Margin="20"
+                HeightRequest="25"
+                WidthRequest="130"/>
+
+    </VerticalStackLayout>
+
+</toolkit:Popup>
